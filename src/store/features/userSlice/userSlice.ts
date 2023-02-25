@@ -5,7 +5,6 @@ const initialState: UserState = {
   username: "",
   isLogged: false,
   token: "",
-  id: "",
 };
 
 const userSlice = createSlice({
@@ -15,7 +14,6 @@ const userSlice = createSlice({
     loginUser: (currentUserState, action: PayloadAction<User>): UserState => ({
       ...currentUserState,
       token: action.payload.token,
-      id: action.payload.id,
       username: action.payload.username,
       isLogged: true,
     }),
