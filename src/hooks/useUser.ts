@@ -9,7 +9,7 @@ const registerEndpoint = "/register";
 const useUser = (): UseUserStructure => {
   const registerUser = async (registerUserData: FormData) => {
     try {
-      fetch(`${apiUrl}${usersEndpoint}${registerEndpoint}`, {
+      await fetch(`${apiUrl}${usersEndpoint}${registerEndpoint}`, {
         method: "POST",
         body: registerUserData,
       });
