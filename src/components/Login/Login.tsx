@@ -1,7 +1,9 @@
 import { useState } from "react";
+import useUser from "../../hooks/useUser";
 import LoginStyled from "./LoginStyled";
 
 const Login = (): JSX.Element => {
+  const { loginUser } = useUser();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -24,6 +26,8 @@ const Login = (): JSX.Element => {
 
     document.querySelectorAll("input").forEach((input) => (input.value = ""));
 
+    loginUser({ username, password });
+
     setUsername("");
     setPassword("");
   };
@@ -39,6 +43,7 @@ const Login = (): JSX.Element => {
         className="form__input"
         id="username"
         onChange={handleUsername}
+        value={username}
       />
       <label htmlFor="password" className="form__label">
         Password:
@@ -48,6 +53,7 @@ const Login = (): JSX.Element => {
         className="form__input"
         id="password"
         onChange={handlePassword}
+        value={password}
       />
       <button type="submit" className="form__button" disabled={emptyAreaFields}>
         Log in
