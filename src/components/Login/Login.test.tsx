@@ -48,4 +48,32 @@ describe("Given the Login component", () => {
       expect(usernameInput).toHaveValue(expectedInputValue);
     });
   });
+
+  describe("When the user clicks login button", () => {
+    test("then it should reset the value of username's input field", async () => {
+      const usernameLabel = "Username:";
+      const expectedInputValue = "";
+      render(<Login />);
+
+      const usernameInput = screen.getByLabelText(usernameLabel);
+      const loginButton = screen.getByRole("button", { name: "Log in" });
+
+      await act(async () => await userEvent.click(loginButton));
+
+      expect(usernameInput).toHaveValue(expectedInputValue);
+    });
+
+    test("then it should reset the value of password's input field", async () => {
+      const passwordLabel = "Password:";
+      const expectedInputValue = "";
+      render(<Login />);
+
+      const passwordInput = screen.getByLabelText(passwordLabel);
+      const loginButton = screen.getByRole("button", { name: "Log in" });
+
+      await act(async () => await userEvent.click(loginButton));
+
+      expect(passwordInput).toHaveValue(expectedInputValue);
+    });
+  });
 });
