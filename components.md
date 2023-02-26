@@ -114,6 +114,7 @@
 
 - Receives the login user action
 
+- Shows text with welcoming message
 - Shows an input for users' username with label "Username:"
 - Shows an input for users' password with label "Password:"
 
