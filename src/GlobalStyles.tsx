@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
 
 :root {
-  --primary-color: #8DC6C3;
+  --primary-color: #74dad4;
   --secondary-color: #714297;
   --primary-font-family: "Quicksand", sans-serif;
 }
