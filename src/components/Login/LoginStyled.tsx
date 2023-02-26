@@ -8,9 +8,16 @@ const LoginStyled = styled.form`
   border-radius: 1rem;
   gap: 0.3rem;
   padding: 2rem;
-  height: 200px;
+  height: 300px;
   width: 300px;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+  span {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+  }
 
   button {
     border-radius: 1rem;

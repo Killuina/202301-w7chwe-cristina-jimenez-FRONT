@@ -22,12 +22,15 @@ const Login = (): JSX.Element => {
   const onSubmitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event?.preventDefault();
 
+    document.querySelectorAll("input").forEach((input) => (input.value = ""));
+
     setUsername("");
     setPassword("");
   };
 
   return (
     <LoginStyled onSubmit={onSubmitHandler} className="form">
+      <span>welcome!</span>
       <label htmlFor="username" className="form__label">
         Username:
       </label>
