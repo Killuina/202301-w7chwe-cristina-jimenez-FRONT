@@ -22,8 +22,6 @@ const Login = (): JSX.Element => {
   const onSubmitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event?.preventDefault();
 
-    document.querySelectorAll("input").forEach((input) => (input.value = ""));
-
     setUsername("");
     setPassword("");
   };
