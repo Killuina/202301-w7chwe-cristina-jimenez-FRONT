@@ -12,7 +12,7 @@ interface UseUserStructure {
 const apiUrl = process.env.REACT_APP_URL_API!;
 const usersEndpoint = "/users";
 const registerEndpoint = "/register";
-const loginEndpoint = "login/";
+const loginEndpoint = "/login";
 
 const useUser = (): UseUserStructure => {
   const dispatch = useAppDispatch();
