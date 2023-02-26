@@ -30,9 +30,7 @@ describe("Given the Login component", () => {
         </Wrapper>
       );
 
-      const usernameInput = screen.getByRole("textbox", {
-        name: usernameLabel,
-      });
+      const usernameInput = screen.getByLabelText(usernameLabel);
 
       await act(
         async () => await userEvent.type(usernameInput, expectedInputValue)
