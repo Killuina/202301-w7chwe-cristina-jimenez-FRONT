@@ -12,12 +12,16 @@ const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 body {
-  padding: 1.5rem;
+  margin: 0;
   font-family: var(--primary-font-family);
   font-weight: 600;
-  width: 100%;
-  min-height: 100vh;
   
 }
 

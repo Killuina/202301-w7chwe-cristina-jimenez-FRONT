@@ -10,6 +10,7 @@ const LoginStyled = styled.form`
   padding: 2rem;
   height: 300px;
   width: 300px;
+  margin: 2rem;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 
   span {
