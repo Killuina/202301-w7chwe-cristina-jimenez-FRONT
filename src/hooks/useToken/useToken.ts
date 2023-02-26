@@ -1,8 +1,8 @@
 import decodeToken from "jwt-decode";
 import { useCallback } from "react";
-import { loginUserActionCreator } from "../store/features/userSlice/userSlice";
-import { useAppDispatch } from "../store/hooks";
-import { CustomTokenPayload } from "./types";
+import { loginUserActionCreator } from "../../store/features/userSlice/userSlice";
+import { useAppDispatch } from "../../store/hooks";
+import { CustomTokenPayload } from "../types";
 
 interface UseTokenStructure {
   getToken: () => void;

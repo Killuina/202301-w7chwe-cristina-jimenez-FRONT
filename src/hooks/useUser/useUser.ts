@@ -1,8 +1,7 @@
-import decodeToken from "jwt-decode";
-import { User } from "../store/features/userSlice/types";
-import { loginUserActionCreator } from "../store/features/userSlice/userSlice";
-import { useAppDispatch } from "../store/hooks";
-import { CustomTokenPayload, LoginResponse, UserCredentials } from "./types";
+import { User } from "../../store/features/userSlice/types";
+import { loginUserActionCreator } from "../../store/features/userSlice/userSlice";
+import { useAppDispatch } from "../../store/hooks";
+import { LoginResponse, UserCredentials } from "../types";
 
 interface UseUserStructure {
   loginUser: (userCredentials: UserCredentials) => Promise<void>;
@@ -10,9 +9,9 @@ interface UseUserStructure {
 }
 
 const apiUrl = process.env.REACT_APP_URL_API!;
-const usersEndpoint = "/users";
-const registerEndpoint = "/register";
-const loginEndpoint = "/login";
+export const usersEndpoint = "/users";
+export const registerEndpoint = "/register";
+export const loginEndpoint = "/login";
 
 const useUser = (): UseUserStructure => {
   const dispatch = useAppDispatch();
@@ -29,9 +28,7 @@ const useUser = (): UseUserStructure => {
       );
       const { token } = (await response.json()) as LoginResponse;
 
-      const tokenPayload: CustomTokenPayload = decodeToken(token);
-
-      const { username } = tokenPayload;
+      const { username } = userCredentials;
 
       const loggedUser: User = {
         username,

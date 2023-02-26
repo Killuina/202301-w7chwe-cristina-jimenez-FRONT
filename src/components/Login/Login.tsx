@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useUser from "../../hooks/useUser";
+import useUser from "../../hooks/useUser/useUser";
 import LoginStyled from "./LoginStyled";
 
 const Login = (): JSX.Element => {
